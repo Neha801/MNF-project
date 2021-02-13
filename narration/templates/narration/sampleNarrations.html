@@ -1,0 +1,28 @@
+{% extends "mnfapp/base.html" %}
+{% load static %}
+{% block content %}
+<center>
+
+    <h1>My Narrations</h1>
+    <div class="container">
+
+        <div class="col-3">
+            <video width="300" height="120" controls>
+                <source src="E:\Angel.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <!-- {% for x in video %}
+        <video width="320" height="240" controls>
+            <source src="{{x.video.url}}" type="video/mp4">
+        </video>
+
+        <h4>Script:-{{x.caption}}</h4>
+
+        {% endfor %} -->
+
+    </div>
+</center>
+
+
+{% endblock content %}

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<video width="600" controls playsinline autoplay muted loop>
+  <source src="{% static 'mnfapp/assets/media/logos/Vid_1_01.mp4' %}" type="video/mp4">
+  
+</video>
+
+<a href="{% url 'empty' %}" class="button" style="background-color: blue;background-color: rgb(43, 42, 42);
+                border: none;
+                color: rgb(247, 242, 242);
+                padding: 5px 5px;
+                text-align: right;
+                text-decoration: none;
+                display: inline-block;
+                
+                margin: 2px 1px;
+                cursor: pointer;
+                margin-top: auto;
+            ">View More</a>
+
+<form action="">
+  <label for="fname">What's your name?</label><br>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="fname">Where do you live?</label><br>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="fname">What do you do?</label><br>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="lname">What brings you here</label><br>
+  <input type="text" id="lname" name="lname"><br><br>
+  <label for="lname">Who reffered this program to you?</label><br>
+  <input type="text" id="lname" name="lname"><br><br>
+  <label for="lname">What do you listen when you hear the word Boundaryless? </label><br>
+  
+  <input type="text" id="lname" name="lname"><br><br>
+  <a href="{% url 'newempty' %}" class="button" style="background-color: blue;background-color: rgb(43, 42, 42);
+                border: none;
+                color: rgb(247, 242, 242);
+                padding: 5px 5px;
+                text-align: right;
+                text-decoration: none;
+                display: inline-block;
+                
+                margin: 2px 1px;
+                cursor: pointer;
+                margin-top: auto;
+            ">Submit</a>
+</form>
+
+</body> 
+</html>

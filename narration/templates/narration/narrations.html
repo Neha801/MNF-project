@@ -1,0 +1,649 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	{% load static %}{% csrf_token %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<link href="{% static 'mnfapp/member.css' %}" rel="stylesheet" type="text/css" />
+	<a href="https://icons8.com/icon/39942/expand-arrow"></a>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<title>Narration Room</title>
+</head>
+
+<body>
+	<div class="header" style="background-color: rgb(247, 240, 240);">
+		<img src="{% static 'mnfapp/assets/media/logos/MNF.jpg' %}" alt="">
+
+		<div class="dropdown">
+			<button class="dropbtn">Harkat Club</button>
+			<div class="dropdown-content">
+				<a href="#">Clubs/find Club</a>
+				<a href="#">Propose a new club</a>
+				<a href="#">Join more club</a>
+				<a href="#">Apply for changing parent club</a>
+				<a href="#">My Club</a>
+				<a href="#">View Collaboration Offers</a>
+				<a href="#">View Announcements</a>
+				<a href="#">Promote Club</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn" style="background-color: blue;">Narration Room</button>
+			<div class="dropdown-content">
+				<a href="{% url 'narration' %}">Demo</a>
+				<a href="{% url 'narration' %}">Narrate a Script</a>
+				<a href="{% url 'narration' %}">Create a sample</a>
+				<a href="{% url 'narration' %}">Edit a Narration</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">Conversion Studio</button>
+			<div class="dropdown-content">
+				<a href="#">Demo</a>
+				
+				<a href="{% url 'conversion' %}">Convert a Script</a>
+				<a href="#">Edit a Converted Script</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">Preview Chamber</button>
+			<div class="dropdown-content">
+				<a href="{% url 'chamber' %}">Demo</a>
+				<a href="{% url 'chamber' %}">Create a Sample</a>
+				<a href="{% url 'chamber' %}">Create a dummy film</a>
+				<a href="{% url 'chamber' %}">Edit a dummy film</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">Project Center</button>
+			<div class="dropdown-content">
+				<a href="#">Demo</a>
+				<a href="#">Last Updated</a>
+				<a href="#">Start a New film</a>
+				<a href="#">Convert Story to Script</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">Viewer Loungue</button>
+			<div class="dropdown-content">
+				<a href="#">Share a Video</a>
+				<a href="#">View new Upload</a>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn" style="width: 60px;"><img style="width: 20px;height: 20px;margin-left: 0px;"
+					class="h-20px w-20px " src="{% static 'mnfapp/assets/media/svg/flags/010-india.svg' %}"
+					alt="" /></button>
+			<div class="dropdown-content" style="width: 60px;">
+				<a href="#"><img style="width: 20px;height: 20px;margin-left: 0px;" class="h-20px w-20px "
+						src="{% static 'mnfapp/assets/media/svg/flags/010-india.svg' %}" alt="" />India</a>
+				<a href="#"><img style="width: 20px;height: 20px;margin-left: 0px;" class="h-20px w-20px "
+						src="{% static 'mnfapp/assets/media/svg/flags/226-united-states.svg' %}" alt="" />USA</a>
+
+				<a href="#"><img style="width: 20px;height: 20px;margin-left: 0px;" class="h-20px w-20px "
+						src="{% static 'mnfapp/assets/media/svg/flags/015-china.svg' %}" alt="" />China</a>
+				<a href="#"><img style="width: 20px;height: 20px;margin-left: 0px;" class="h-20px w-20px "
+						src="{% static 'mnfapp/assets/media/svg/flags/012-uk.svg' %}" alt="" />England</a>
+			</div>
+		</div>
+		<div style="background-color: red">
+			<img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/04/05/809624-divya-bharti-crop.jpg"
+				alt="Paris" width="30" height="30" style="border-radius: 50%; margin-left: 5px;">
+		</div>
+		<div style="background-color: red;margin-left: 0px; margin-right: 0px;">
+			<ul style="list-style-type: none; ">
+				<li><span class=" " style="color: rgb(238, 241, 238);">Member Malini</span></li>
+				<li><span class="" style="color: rgb(238, 241, 238);">Harkat Noida </span></li>
+			</ul>
+
+		</div>
+		<div class="dropdown" style="background-color: red">
+			<button class="drop"
+				style="background-color: red;border: none; margin-left:20px;margin-top:21px;color: rgb(238, 241, 238);">Exit</button>
+			<div class="dropdown-content">
+				<a href="#">Contact Us</a>
+				<a href="#">Careers @MNF</a>
+				<a href="#">Announcements</a>
+				<a href="#">MNF News</a>
+				<a href="#">Industry News</a>
+				<a href="#">MNF on Linkedin</a>
+				<a href="#">MNF on Instagram</a>
+				<a href="#">MNF on Twitter</a>
+				<a href="#">MNF on Facebook</a>
+				<a href="{% url 'logout' %}">LOGOUT</a>
+			</div>
+		</div>
+
+	</div>
+	<div class="w3-sidebar w3-bar-block w3-card"
+		style=" width:30px;margin-top:auto; background-color: rgb(43, 42, 42);color: honeydew; right:0;">
+		<button class="btn" style="margin-top:30px;">
+			<span id="acc" style=" padding: 3px 3px 3px 3px;writing-mode: vertical-lr;
+            text-orientation: mixed; margin-right: 5px;border-radius: 4px;
+			background-color:rgb(170, 167, 167); color: white;">My Account</span></button>
+		<button class="btn">
+			<span style=" padding: 3px 3px 3px 3px;writing-mode: vertical-lr;
+		text-orientation: mixed; margin-right: 5px;border-radius: 4px;
+		background-color:rgb(170, 167, 167); color: white;">My Community</span></button>
+		<button class="btn">
+			<span style=" padding: 3px 3px 3px 3px;writing-mode: vertical-lr;
+		text-orientation: mixed; margin-right: 5px;border-radius: 4px;
+		background-color:rgb(170, 167, 167); color: white;">Calendars</span></button>
+		<button class="btn">
+			<span style="padding: 3px 3px 3px 3px;writing-mode: vertical-lr;
+		text-orientation: mixed; margin-right: 5px;border-radius: 4px;
+		background-color:rgb(170, 167, 167); color: white;">Messages</span></button>
+		<button class="btn">
+			<span style="padding: 3px 3px 3px 3px;writing-mode: vertical-lr;
+		text-orientation: mixed; margin-right: 5px;border-radius: 4px;
+		background-color:rgb(170, 167, 167); color: white;">News</span></button>
+
+	</div>
+
+	<input type="checkbox" style="opacity: 1;" name="" id="rna">
+	<label for="rna" class="show-btn">
+		<i class="fa fa-bars"></i>
+	</label>
+	<label for="rna" class="hide-btn">
+		<i class="fa fa-bars"></i>
+	</label>
+	<div class="contentsample" style="margin-top: -15px; text-align: center;">
+		<a href="#" class="button" style="background-color: blue;background-color: rgb(43, 42, 42);
+		border: none;
+		color: rgb(247, 242, 242);
+		padding: 5px 5px;
+		text-align: right;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 12px;
+		margin: 2px 1px;
+		cursor: pointer;
+		margin-top: auto;
+		margin-left:100px
+		">Demo</a>
+		<a href="#" class="button" style="background-color: blue;
+		border: none;
+		color: rgb(247, 242, 242);
+		padding: 5px 5px;
+		text-align: right;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 12px;
+		margin: 2px 1px;
+		cursor: pointer;
+		margin-top: auto;
+		">Create a Sample</a>
+		<a href="#" class="button" style="background-color: blue;background-color: rgb(43, 42, 42);
+		border: none;
+		color: rgb(247, 242, 242);
+		padding: 5px 5px;
+		text-align: right;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 12px;
+		margin: 2px 1px;
+		cursor: pointer;
+		margin-top: auto;
+		">Create a Dummy Film</a>
+		<a href="#" class="button" style="background-color: blue;background-color: rgb(43, 42, 42);
+		border: none;
+		color: rgb(247, 242, 242);
+		padding: 5px 5px;
+		text-align: right;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 12px;
+		margin: 2px 1px;
+		cursor: pointer;
+		margin-top: auto;
+		">Edit a Dummy Film</a>
+		<div class="container">
+			<div class="row">
+				<div class="col-9">
+					Welcome to Narration Room. Here we provide you the service of narration for any given script. You
+					can choose any script from your previously uploaded scripts or scripts provided by MNF. You can also
+					upload a new script if you want. After submitting the script you will be notified once your output
+					is ready...Happy Filming
+				</div>
+				<div class="col-3">
+					<video width="300" height="120" controls>
+						<source src="E:\Angel.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+
+			</div>
+		</div>
+		<div style=" text-align: center; ">
+			<select style="background-color: rgb(43, 42, 42); color: aliceblue;">
+				<option>Choose a Script</option>
+				<option value="C">From MNF Scripts</option>
+				<option value="Cplus">From your Script</option>
+				<option value="Python">Upload a New Script</option>
+
+			</select>
+		</div>
+		<div>
+			<div class="C GFG" style=" margin-top:5px; width :50%;margin-left:350px">
+				<table>
+					<tr>
+						<th>Script Title</th>
+						<th>Author Name</th>
+						<th>Genre</th>
+						<th>View Script</th>
+						<th>Duration</th>
+
+					</tr>
+					<tr>
+						<td>
+							<div class="checkbox-inline">
+								<label class="checkbox checkbox-primary">
+									<input type="checkbox" name="script[]" value="Action" />
+									<span></span>KGF</label>
+						</td>
+						<td>Maria Anders</td>
+						<td>Action</td>
+						<td>View Script</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							<div class="checkbox-inline">
+								<label class="checkbox checkbox-primary">
+									<input type="checkbox" name="script[]" value="Action" />
+									<span></span>Bahubali</label>
+						</td>
+						<td>Francisco Chang</td>
+						<td>Thriller</td>
+						<td>View Script</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							<div class="checkbox-inline">
+								<label class="checkbox checkbox-primary">
+									<input type="checkbox" name="script[]" value="Action" />
+									<span></span>Life</label>
+						</td>
+						<td>Francisco Chang</td>
+						<td>Scientific</td>
+						<td>View Script</td>
+						<td></td>
+					</tr>
+				</table><br>
+				<div class="row">
+					<div class="col-lg-3"></div>
+					<div class="col-lg-8">
+						<button style="background-color: rgb(43, 42, 42);" type="submit"
+							class="btn btn-primary mr-2">Get your Dummy Video</button>&nbsp;
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="Cplus GFG" style="margin-top: 5px; width :50%;margin-left:350px">
+			<table>
+				<tr>
+					<th>Script Title</th>
+					<th>Author Name</th>
+					<th>Genre</th>
+					<th>View/Edit Script</th>
+					<th>Duration</th>
+
+				</tr>
+				<tr>
+					<td>
+						<div class="checkbox-inline">
+							<label class="checkbox checkbox-primary">
+								<input type="checkbox" name="script[]" value="Action" />
+								<span></span>KGF</label>
+					</td>
+					<td>Maria Anders</td>
+					<td>Action</td>
+					<td>View/Edit Script</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>
+						<div class="checkbox-inline">
+							<label class="checkbox checkbox-primary">
+								<input type="checkbox" name="script[]" value="Action" />
+								<span></span>Bahubali</label>
+					</td>
+					<td>Francisco Chang</td>
+					<td>Thriller</td>
+					<td>View/Edit Script</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>
+						<div class="checkbox-inline">
+							<label class="checkbox checkbox-primary">
+								<input type="checkbox" name="script[]" value="Action" />
+								<span></span>Life</label>
+					</td>
+					<td>Francisco Chang</td>
+					<td>Scientific</td>
+					<td>View/Edit Script</td>
+					<td></td>
+				</tr>
+			</table><br>
+			<div class="row" >
+				<div class="col-lg-3"></div>
+				<div class="col-lg-8">
+					<button style="background-color: rgb(43, 42, 42);" class="btn btn-primary mr-2">Get
+						your Dummy Video</button>&nbsp;
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="Python GFG">
+		<form action="{% url 'script'%}" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+			<div class="container" style=" margin-top:5px;">
+				<div class="row">
+					<div class="col-lg-6 mb-4">
+						<div class="card">
+							<img class="card-img-top" src="" alt="">
+
+							<div class="card-body">
+								<div class="form-group row">
+
+									<h4 class="card-title">Please fill the Script
+										Information </h4>
+
+									<label class="col-lg-3 col-form-label text-lg-right">Script Title</label>
+									<div class="col-lg-7">
+										<input type="text" class="form-control" placeholder="Enter Script title"
+											name="script_title">
+
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-lg-3 col-form-label text-lg-right">Author Name:</label>
+									<div class="col-lg-7">
+										<input type="text" class="form-control" placeholder="Enter Author name"
+											name="author_name">
+										<span class="form-text text-muted">For mutliple authors name use comma(,)</span>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-lg-5 col-form-label text-lg-right">Language of Screenplay</label>
+									<div class="col-lg-5">
+										<select name="Language of Screenplay" >
+											<option>Select a Language Option</option>
+											<option value="English">English</option>
+											<option value="Hindi">Hindi</option>
+											<option value="German">German</option>
+
+										</select>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-lg-5 col-form-label text-lg-right"> Script of screenplay</label>
+									<div class="col-lg-5">
+										<select>
+											<option>Select a Language Option</option>
+											<option value="English">English</option>
+											<option value="Hindi">Hindi</option>
+											<option value="German">German</option>
+
+										</select>
+
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-lg-5 col-form-label text-lg-right">Language of dialogues</label>
+									<div class="col-lg-5">
+										<select>
+											<option>Select a Language Option</option>
+											<option value="English">English</option>
+											<option value="Hindi">Hindi</option>
+											<option value="German">German</option>
+
+										</select>
+
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-lg-5 col-form-label text-lg-right"> Script Of Dialogue</label>
+									<div class="col-lg-5">
+										<select>
+											<option>Select a Language Option</option>
+											<option value="English">English</option>
+											<option value="Hindi">Hindi</option>
+											<option value="German">German</option>
+
+										</select>
+									</div>
+								</div>
+								
+								
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-6 mb-4" style="margin-left: -21px; height: 300px;">
+						<div class="card" style="height: 297px;">
+							<img class="card-img-top" src="" alt="">
+
+							<div class="card-body">
+								<div class="form-group row">
+									<h4 class="card-title" style="border-bottom: 5px; border-color: black;">Optional
+										Details About Script</h4>
+
+								</div>
+								<div class="form-group row">
+									<label class="col-lg-2 col-form-label text-lg-right" name="genre">Genre:</label>
+									<div class="col-8 col-form-label">
+										<div class="checkbox-inline">
+											<label class="checkbox checkbox-primary">
+												<input type="checkbox" name="genre[]" value="Action" />
+												<span></span>Action</label>
+											<label class="checkbox checkbox-primary">
+												<input type="checkbox" name="genre[]" value="Adventure" />
+												<span></span>Adventure</label>
+											<label class="checkbox checkbox-primary">
+												<input type="checkbox" name="genre[]" value="Biopic" />
+												<span></span>Biopic</label>
+											<label class="checkbox checkbox-primary">
+												<input type="checkbox" name="genre[]" value="Comedy" />
+												<span></span>Comedy</label>
+											<label class="checkbox checkbox-primary">
+												<input type="checkbox" name="genre[]" value="Crime" />
+												<span></span>Crime</label>
+											<label class="checkbox checkbox-primary">
+												<input type="checkbox" name="genre[]" value="Drama " />
+												<span></span>Drama </label>
+											<label class="checkbox checkbox-primary">
+												<input type="checkbox" name="genre[]" value="Fantasy" />
+												<span></span>Fantasy</label>
+											<label class="checkbox checkbox-primary">
+												<input type="checkbox" name="genre[]" value="Horror " />
+												<span></span>Horror </label>
+											<label class="checkbox checkbox-primary">
+												<input type="checkbox" name="genre[]" value="Mystery" />
+												<span></span>Mystery</label>
+											<label class="checkbox checkbox-primary">
+												<input type="checkbox" name="genre[]" value="Political" />
+												<span></span>Political</label>
+											<label class="checkbox checkbox-primary">
+												<input type="checkbox" name="genre[]" value="Romance " />
+												<span></span>Romance </label>
+											<label class="checkbox checkbox-primary">
+												<input type="checkbox" name="genre[]" value="Sci-Fi" />
+												<span></span>Sci-Fi</label>
+											<label class="checkbox checkbox-primary">
+												<input type="checkbox" name="genre[]" value="Thriller" />
+												<span></span>Thriller</label>
+											<label class="checkbox checkbox-primary">
+												<input type="checkbox" name="genre[]" value="War" />
+												<span></span>War</label>
+
+										</div>
+
+									</div>
+								</div>
+
+								<div class="form-group row">
+									<label class="col-lg-3 col-form-label text-lg-right">Period set in</label>
+									<div class="col-lg-7">
+										<select>
+											<option>Time</option>
+											<option value="English">Ancient</option>
+											<option value="Hindi">Contemporary</option>
+											<option value="German">Modern</option>
+
+										</select>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-lg-3 col-form-label text-lg-right">Geographical region</label>
+									<div class="col-lg-7">
+										<input type="text" class="form-control" placeholder="Enter Geographical region"
+											name="Geographical region">
+										<span class="form-text text-muted">Please enter Geographical region</span>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-lg-3 col-form-label text-lg-right">Cities if any</label>
+									<div class="col-lg-7">
+										<input type="text" class="form-control" placeholder="Enter City Name"
+											name="Cities if any">
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-5">
+						<input type="file" class="button" name="upload" value="Upload" accept=".txt,.pdf,.docx"
+							id="inp">
+						<button style="background-color: rgb(43, 42, 42);margin-top: 10px;" type="submit" type="submit"
+							onclick="uploadscript()" class="btn btn-primary mr-2">Get your Dummy Video</button>
+					</div>
+				</div>
+			</div>	</div>
+		</form>
+
+	</div>
+	
+
+	<div class="sidebar">
+		<ul>
+			<li><a href="" style="background-color: rgb(137, 218, 137);color: blue;"><span><strong>Quick
+							Access</strong></span></a></li>
+			<li><a href="" style="background-color: rgb(137, 218, 137);color: blue;"><span><strong>My
+							Inputs</strong></span></a></li>
+			<li><a href="" style="background-color: white;"><span>My Stories</span></a></li>
+			<li><a href="{% url 'my_scripts'%}"><span>My Scripts</span></a></li>
+			<li><a href=""><span>My Voices</span></a></li>
+			<li><a href="" style="background-color: rgb(137, 218, 137);color: blue;"><span><strong>On Going
+							Projects</strong></span></a></li>
+			<li><a href="{% url 'sampleNarrations'%}"><span>Narrations</span></a></li>
+			<li><a href=""><span>Conversions</span></a></li>
+			<li><a href="{% url 'video'%}"><span>Dummy Videos</span></a></li>
+			<li><a href=""><span>Projects</span></a></li>
+			<li><a href="" style="background-color: rgb(137, 218, 137);color: blue;"><span><strong>Completed
+							Projects</strong></span></a></li>
+			<li><a href="{% url 'sampleNarrations'%}"><span>Narrations</span></a></li>
+			<li><a href=""><span>Conversions</span></a></li>
+			<li><a href="{% url 'video'%}"><span>Dummy Videos</span></a></li>
+			<li><a href=""><span>Projects</span></a></li>
+			<li><a href=""
+					style="background-color: rgb(137, 218, 137);color: blue;"><span><strong>Help</strong></span></a>
+			</li>
+			<li><a href=""
+					style="background-color: rgb(137, 218, 137);color: blue;"><span><strong>FAQ</strong></span></a></li>
+
+		</ul>
+	</div>
+	{% block content %}{% endblock %}
+
+
+	<!--begin::Container-->
+
+	<!--end::Container-->
+
+	<div id="footer">
+		<div class="icons">
+			<a class="icon" href="" target="_blank"><img style="width: 20px;height: 20px;" alt="Logo"
+					src="{% static 'mnfapp/assets/media/icons/linkedin_blue.png' %}" /></a>
+			<a class="icon" href="" target="_blank"><img style="width: 20px;height: 20px;" alt="Logo"
+					src="{% static 'mnfapp/assets/media/icons/instagram.png' %}" /></a>
+			<a class="icon" href="" target="_blank"><img style="width: 20px;height: 20px;" alt="Logo"
+					src="{% static 'mnfapp/assets/media/icons/facebook.png' %}" /></a>
+			<a class="icon" href="" target="_blank"><img style="width: 20px;height: 20px;" alt="Logo"
+					src="{% static 'mnfapp/assets/media/icons/twitter.png' %}" /></a>
+		</div>
+		<div>
+			<a href="" target="_blank" style=" border-right: 1px solid rgb(17, 16, 16); color: rgb(17, 16, 16);">About
+				MNF</a>
+			<a href="" target="_blank"
+				style=" border-right: 1px solid rgb(17, 16, 16); color: rgb(17, 16, 16);">Subscriptions Plan</a>
+			<a href="" target="_blank" style=" border-right: 1px solid rgb(17, 16, 16); color: rgb(17, 16, 16);">Contact
+				Us</a>
+			<a href="" target="_blank"
+				style=" border-right: 1px solid rgb(17, 16, 16); color: rgb(17, 16, 16);">Careers</a>
+			<a href="" target="_blank" style=" border-right: 1px solid rgb(17, 16, 16); color: rgb(17, 16, 16);">Privacy
+				Policy</a>
+			<a href="" target="_blank" style=" border-right: 1px solid rgb(17, 16, 16); color: rgb(17, 16, 16);">Terms
+				of
+				Services</a>
+			<a href="" target="_blank" style="color: rgb(17, 16, 16);">© 2021All Right Reserved</a>
+		</div>
+	</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("select").on('change', function () {
+				$(this).find("option:selected").each(function () {
+					var geeks = $(this).attr("value");
+					if (geeks) {
+						$(".GFG").not("." + geeks).hide();
+						$("." + geeks).show();
+					} else {
+						$(".GFG").hide();
+					}
+
+				});
+			}).change();
+		});
+	</script>
+	<script>
+		function uploadscript() {
+			// if ("{{script_title}}" && "{{author_name}}" && "{{genre}}" && "{{script}}")
+			alert("Thank you for uploading script. You'll be notified once your dummy video is ready")
+			// else
+			//     alert("something wrong!!")
+		}
+	</script>
+
+	<!-- Optional JavaScript; choose one of the two! -->
+
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+		crossorigin="anonymous"></script>
+
+	<!-- Option 2: Separate Popper and Bootstrap JS -->
+	<!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

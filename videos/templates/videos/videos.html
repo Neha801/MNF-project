@@ -1,0 +1,52 @@
+{% extends "mnfapp/base.html" %}
+{% load static %}
+{% block content %}
+<center>
+
+    <h1>My Dummy Videos</h1>
+    <div class="container">
+        {% for x in video %}
+        <video width="320" height="240" controls>
+            <source src="{{x.video.url}}" type="video/mp4">
+        </video>
+
+        <h4>Script:-{{x.caption}}</h4>
+
+        {% endfor %}
+
+    </div>
+    <div class="container">
+        {% for x in video %}
+        <video width="320" height="240" controls>
+            <source src="{{x.video.url}}" type="video/mp4">
+        </video>
+
+        <h4>Script:-{{x.caption}}</h4>
+
+        {% endfor %}
+
+    </div>
+    <div class="container">
+        {% for x in video %}
+        <video width="320" height="240" controls>
+            <source src="{{x.video.url}}" type="video/mp4">
+        </video>
+
+        <h4>Script:-{{x.caption}}</h4>
+
+        {% endfor %}
+
+    </div>
+    <div class="container">
+        {% for x in video %}
+        <video width="320" height="240" controls>
+            <source src="{{x.video.url}}" type="video/mp4">
+        </video>
+
+        <h4>Script:-{{x.caption}}</h4>
+
+        {% endfor %}
+
+    </div>
+</center>
+{% endblock content %}

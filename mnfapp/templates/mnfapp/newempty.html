@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html> 
+<html> 
+<body> 
+<p>Your Basket of concern</p>
+<video width="320" height="240" controls playsinline autoplay muted loop>
+    <source src="{% static 'mnfapp/assets/media/logos/Vid_1_01.mp4' %}" type="video/mp4">
+    
+    Your browser does not support HTML video.
+  </video>
+  
+  <a href="{% url 'empty' %}" class="button" style="background-color: blue;background-color: rgb(43, 42, 42);
+                  border: none;
+                  color: rgb(247, 242, 242);
+                  padding: 5px 5px;
+                  text-align: right;
+                  text-decoration: none;
+                  display: inline-block;
+                  
+                  margin: 2px 1px;
+                  cursor: pointer;
+                  margin-top: auto;
+              ">View More</a><br>
+<img src="{% static 'mnfapp/assets/media/logos/Screenshot (53).png' %}" alt="Italian Trulli">
+<input type="submit" value="Submit">
+</body> 
+</html>
