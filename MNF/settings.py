@@ -25,7 +25,11 @@ SECRET_KEY = 'tk0w_78_qx)+$m*y0wyb9r#3#emef(#)zt^7_xr-jp6c4y+ybk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['mynextfilm.herokuapp.com', 'localhost','127.0.0.1']
+ALLOWED_HOSTS = ['0.0.0.0','mnfdemo.herokuapp.com','127.0.0.1','*',
+   'http://mnfdemo.herokuapp.com/',
+   'https://mnfdemo.herokuapp.com/',
+   'mnfdemo.herokuapp.com',
+   'mnfdemo.herokuapp.com/',]
 
 # Application definition
 
