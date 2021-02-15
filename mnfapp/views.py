@@ -29,7 +29,8 @@ def empty(request):
     return render(request, 'mnfapp/empty.html')
 def newempty(request):
     return render(request, 'mnfapp/newempty.html')
-    
+def viewmore(request):
+    return render(request, 'mnfapp/viewmore.html')     
 
 def base(request):
     return render(request, 'mnfapp/base.html')
