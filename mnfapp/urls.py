@@ -11,7 +11,7 @@ urlpatterns = [
     path('mynarration', views.mynarration, name="mynarration"),
     path('empty', views.empty, name="empty"),
     path('newempty', views.newempty, name="newempty"),
-
+    path('viewmore', views.viewmore, name="viewmore"),
 
 
 ]
