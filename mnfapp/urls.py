@@ -9,9 +9,16 @@ urlpatterns = [
     #path('<int:pk>/upload/', views.upload, name='upload'),
     path('my_scripts', views.my_scripts, name="my_scripts"),
     path('mynarration', views.mynarration, name="mynarration"),
-    path('empty', views.empty, name="empty"),
-    path('newempty', views.newempty, name="newempty"),
-    path('viewmore', views.viewmore, name="viewmore"),
 
+    path('name', views.name, name="name"),
+    path('live', views.live, name="live"),
+    path('do', views.do, name="do"),
+    path('referred', views.referred, name="referred"),
+    path('boundaryless', views.boundaryless, name="boundaryless"),
+    path('basket', views.basket, name="basket"),
+    path('showvideo', views.showvideo, name="showvideo"),
+    path('special', views.special, name="special"),
+    path('concern', views.concern, name="concern"),
+    
 
 ]
