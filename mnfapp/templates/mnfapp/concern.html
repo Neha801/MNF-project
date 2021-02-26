@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>Concern</title>
+    <link href="{% static 'mnfapp/videorec.css' %}" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+<body> 
+    <video width="600" controls playsinline autoplay unmuted >
+        <source src="{% static 'mnfapp/assets/media/logos/V13.mp4' %}" type="video/mp4">
+    </video>
+       
+<br>
+<button id="mybutton" type="button"onclick="play()" >More about basket of concern</button>
+<video id="logo" width="320" height="176" controls  style="display: none;">
+  <source src="{% static 'mnfapp/assets/media/logos/v14.mp4' %}" type="video/mp4">
+ 
+</video>
+<br>
+<button id="mybuttons" type="button" onclick="play()">Q&A</button>
+<video id="media" width="320" height="176" controls  style="display: none;">
+  <source src="{% static 'mnfapp/assets/media/logos/v15.mp4' %}" type="video/mp4">
+ 
+</video><br><br>
+<a href="" class="button" style="background-color: blue;background-color: rgb(43, 42, 42);
+                border: none;
+                color: rgb(247, 242, 242);
+                padding: 5px 5px;
+                text-align: right;
+                text-decoration: none;
+                display: inline-block;
+                
+                margin: 2px 1px;
+                cursor: pointer;
+                margin-top: auto;
+            ">Move </a>
+</body>
+<script src="{% static 'mnfapp/videorec.js' %}" ></script>
+<script> 
+  $(document).ready(
+    function(){
+     
+        $("#mybutton").click(function () {
+            $("#logo").show();
+        });
+
+    }
+    );
+    $(document).ready(
+    function(){
+     
+        $("#mybuttons").click(function () {
+            $("#media").show();
+        });
+
+    }
+    );
+    function play() {
+        var video = document.getElementById("logo");
+        video.play();
+      }
+    function play() {
+        var video = document.getElementById("media");
+        video.play();
+      }
+</script>
+</html>

@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<video width="400" controls playsinline autoplay unmuted >
+  <source src="{% static 'mnfapp/assets/media/logos/V5.mp4' %}" type="video/mp4">
+  
+</video>
+
+<br>
+<span class="form-text text-muted" style="font-size: 25px; text-align: center;">What do you do?</span><br>
+    <h3>(Record or write your answer)</h3>
+    
+<div id="container">
+  <div>
+    <button id="start">Start camera</button>
+    <button id="record" disabled>Record</button>
+    <button id="play" disabled>Play</button>
+    <!-- button id="download" disabled>Download</button -->
+  </div>
+  <div>
+   <p>
+      Echo cancellation: <input type="checkbox" id="echoCancellation" />
+    </p>
+  </div>
+  <video id="gum" playsinline autoplay muted></video>
+  <video id="recorded" playsinline loop></video>
+  <div>
+    <span id="errorMsg"></span>
+  </div>
+</div>
+<form enctype="multipart/form-data" method="POST" action="" >{% csrf_token %}
+ <h4>Write here
+    <input type="text" class="form-control" name="donename"> OR </h4>
+    <input type="file" id="donevideo" name="donevideo"><br><br>
+    <input type="submit" value="Submit"/>
+  </form>  
+    
+
+</body> 
+</html>
