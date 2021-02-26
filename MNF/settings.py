@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'videos',
 
     'django.contrib.sites',
-
+    
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'MNF.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'dbtest.sqlite3',
     }
 }
 
@@ -140,7 +140,7 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -149,6 +149,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mnfapp/static/mnfapp/media')
 
 STATICFILES_DIRS = (
@@ -156,9 +157,12 @@ STATICFILES_DIRS = (
 )
 
 LOGIN_REDIRECT_URL = 'base'
+
+# # Email configuration for gmail smtp
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "enggcseneha@gmail.com"
+EMAIL_HOST_PASSWORD = "Fulkii@2u"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'enggcseneha@gmail.com'
-EMAIL_HOST_PASSWORD = 'Fulkii@2u'
+EMAIL_USE_SSL = False
