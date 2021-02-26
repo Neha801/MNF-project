@@ -12,7 +12,10 @@ from django.utils.dateparse import parse_date
 from django.contrib.auth.decorators import login_required
 import datetime
 from django.contrib import messages
-from mnfapp.models import Uploads, Scripts
+from mnfapp.models import Uploads, Scripts, Uploadvideo,Uploadrefer,Uploaddo,Uploadlive,Uploadboundary
+from django.template import RequestContext
+
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 path = os.path.join(BASE_DIR, 'mnfapp/static/mnfapp/media/scripts')
@@ -25,12 +28,117 @@ def home(request):
 def dummyfilm(request):
     return render(request, 'mnfapp/preview_chamber.html')
 
-def empty(request):
-    return render(request, 'mnfapp/empty.html')
-def newempty(request):
-    return render(request, 'mnfapp/newempty.html')
-def viewmore(request):
-    return render(request, 'mnfapp/viewmore.html')     
+def name(request):
+    if request.method == 'POST':
+        if request.FILES.get('recordaudio'):
+            recfile = request.FILES.get('recordaudio')
+            fs = FileSystemStorage()
+            file_name = recfile.name
+            filepath = os.path.join(settings.MEDIA_ROOT, file_name)
+            if os.path.exists(filepath):
+                os.remove(filepath)
+            fs.save(file_name, recfile)
+            s=Uploadvideo(recfile=recfile)
+            s.save()
+            return render(request, 'mnfapp/name.html')
+        else:
+            name = request.POST.get('hala')
+            s=Uploadvideo(name=name)
+            s.save()
+            return render(request, 'mnfapp/name.html')
+    return render(request, 'mnfapp/name.html')
+    
+
+def live(request):
+    if request.method == 'POST':
+        if request.FILES.get('livingvideo'):
+            livevideo = request.FILES.get('livingvideo')
+            fs = FileSystemStorage()
+            file_name = livevideo.name
+            filepath = os.path.join(settings.MEDIA_ROOT, file_name)
+            if os.path.exists(filepath):
+                os.remove(filepath)
+            fs.save(file_name, livevideo)
+            s=Uploadlive(livevideo=livevideo)
+            s.save()
+            return render(request, 'mnfapp/live.html')
+        else:
+            livename = request.POST.get('livingname')
+            s=Uploadlive(livename=livename)
+            s.save()
+            return render(request, 'mnfapp/live.html')
+    return render(request, 'mnfapp/live.html')
+
+def do(request):
+    if request.method == 'POST':
+        if request.FILES.get('donevideo'):
+            dovideo = request.FILES.get('donevideo')
+            fs = FileSystemStorage()
+            file_name = dovideo.name
+            filepath = os.path.join(settings.MEDIA_ROOT, file_name)
+            if os.path.exists(filepath):
+                os.remove(filepath)
+            fs.save(file_name, dovideo)
+            s=Uploaddo(dovideo=dovideo)
+            s.save()
+            return render(request, 'mnfapp/do.html')
+        else:
+            doname = request.POST.get('donename')
+            s=Uploaddo(doname=doname)
+            s.save()
+            return render(request, 'mnfapp/do.html')
+    return render(request, 'mnfapp/do.html')
+def referred(request):
+    if request.method == 'POST':
+        if request.FILES.get('refer'):
+            refervideo = request.FILES.get('refer')
+            fs = FileSystemStorage()
+            file_name = refervideo.name
+            filepath = os.path.join(settings.MEDIA_ROOT, file_name)
+            if os.path.exists(filepath):
+                os.remove(filepath)
+            fs.save(file_name, refervideo)
+            s=Uploadrefer(refervideo=refervideo)
+            s.save()
+            return render(request, 'mnfapp/referred.html')
+        else:
+            refername = request.POST.get('referred')
+            s=Uploadrefer(refername=refername)
+            s.save()
+            return render(request, 'mnfapp/referred.html')
+    return render(request, 'mnfapp/referred.html')
+
+def boundaryless(request):
+    if request.method == 'POST':
+        if request.FILES.get('boundarylesvideo'):
+            boundaryvideo = request.FILES.get('boundarylesvideo')
+            fs = FileSystemStorage()
+            file_name = boundaryvideo.name
+            filepath = os.path.join(settings.MEDIA_ROOT, file_name)
+            if os.path.exists(filepath):
+                os.remove(filepath)
+            fs.save(file_name, boundaryvideo)
+            s=Uploadboundary(boundaryvideo=boundaryvideo)
+            s.save()
+            return render(request, 'mnfapp/boundaryless.html')
+        else:
+            boundaryname = request.POST.get('boundarylesname')
+            s=Uploadboundary(boundaryname=boundaryname)
+            s.save()
+            return render(request, 'mnfapp/boundaryless.html')
+    return render(request, 'mnfapp/boundaryless.html')
+def basket(request):
+    return render(request, 'mnfapp/basket.html')
+def special(request):
+    return render(request, 'mnfapp/special.html')
+def concern(request):
+    return render(request, 'mnfapp/concern.html')
+
+def showvideo(request):
+   
+    return render(request, 'mnfapp/showvideo.html')
+ 
+
 
 def base(request):
     return render(request, 'mnfapp/base.html')
